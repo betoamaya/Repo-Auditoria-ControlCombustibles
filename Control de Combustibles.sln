@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Control de Combustibles", "Control de Combustibles\Control de Combustibles.rptproj", "{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.Debug|Default.ActiveCfg = Debug
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.Debug|Default.Build.0 = Debug
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.Debug|Default.Deploy.0 = Debug
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.DebugLocal|Default.Build.0 = DebugLocal
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.Release|Default.ActiveCfg = Release
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.Release|Default.Build.0 = Release
+		{D552638E-9EF2-499D-AFB6-5B3D76A3BBB6}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E2CA4F0-B3E4-431A-880C-7D10EB73042F}
+	EndGlobalSection
+EndGlobal
