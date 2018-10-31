@@ -51,7 +51,9 @@
   <ItemGroup>
     <Report Include="Cargas de Combustible por Periodo Utilitarios.rdl" />
     <Report Include="Cargas de Combustible.rdl" />
+    <Report Include="Catálogo de Unidades Reporte.rdl" />
     <Report Include="Catálogo de Utilitarios.rdl" />
+    <Report Include="Rendimientos Combustible Cargas de Combustible por Periodo Unidades.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
