@@ -3,10 +3,10 @@ SET ANSI_NULLS ON;
 GO
 -- =============================================
 -- Responsable:		Roberto Amaya
--- Ultimo Cambio:	31/10/2018
+-- Ultimo Cambio:	14/11/2018
 -- Descripción:		Reporte de Cargas Combustible de Unidades
 -- =============================================
-CREATE PROCEDURE [dbo].[rptCargasCombustibleUnidades]
+ALTER PROCEDURE [dbo].[rptCargasCombustibleUnidades]
     @dInicio AS DATETIME,
     @dFin AS DATETIME
 AS
@@ -52,13 +52,24 @@ BEGIN
            cc.UEN,
            cc.VOLUMEN AS 'Litros',
            (
-               SELECT TOP 1
-                   cc2.ODOMETRO
-               FROM dbo.ConsumosCombustible AS cc2
-               WHERE cc2.UNIDAD = cc.UNIDAD
-                     AND cc2.FECHA_HORA < cc.FECHA_HORA
-               ORDER BY cc2.FECHA_HORA DESC
-           ) AS 'Odom. Ant.',
+           SELECT TOP 1
+               cc2.ODOMETRO
+           FROM dbo.ConsumosCombustible AS cc2
+           WHERE (CASE
+                      WHEN ISNUMERIC(cc2.UNIDAD) = 1 THEN
+                          CONVERT(VARCHAR(10), CONVERT(INT, cc2.UNIDAD))
+                      WHEN ISNUMERIC(cc2.UNIDAD) = 0 THEN
+                          RTRIM(cc2.UNIDAD)
+                  END
+                 ) = CASE
+                         WHEN ISNUMERIC(cc.UNIDAD) = 1 THEN
+                             CONVERT(VARCHAR(10), CONVERT(INT, cc.UNIDAD))
+                         WHEN ISNUMERIC(cc.UNIDAD) = 0 THEN
+                             RTRIM(cc.UNIDAD)
+                     END
+                 AND cc2.FECHA_HORA < cc.FECHA_HORA
+           ORDER BY cc2.FECHA_HORA DESC
+       ) AS 'Odom. Ant.',
            cc.ODOMETRO AS 'Odometro',
            cc.ORIGEN AS 'Origen'
     FROM dbo.ConsumosCombustible AS cc
